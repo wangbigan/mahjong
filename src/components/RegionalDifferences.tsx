@@ -16,33 +16,43 @@ interface Region {
 }
 
 const RegionalDifferences: React.FC = () => {
-  const [selectedRegion, setSelectedRegion] = useState('guangdong');
+  const [selectedRegion, setSelectedRegion] = useState('yunnan');
 
   const regions: Region[] = [
     {
-      id: 'guangdong',
-      name: '广东麻将',
-      description: '流行于广东地区，以推倒胡为主要玩法',
-      color: 'from-red-500 to-red-600',
+      id: 'yunnan',
+      name: '云南麻将',
+      description: '杠上花开局，翻尾牌预判、杠牌联动、自摸强制性',
+      color: 'from-green-500 to-green-600',
       rules: [
         {
           name: '基本规则',
-          description: '广东麻将的基本特点',
+          description: '云南麻将的独特特点',
           details: [
-            '只有万、条、筒三种花色，没有字牌',
-            '总共108张牌（每种花色36张）',
-            '可以吃、碰、杠',
-            '推倒胡：任意牌型都可以胡牌'
+            '136张牌，包含万、条、筒、字牌，没有花牌',
+            '飘胡：可以胡任意牌型，不限制番数',
+            '烂牌胡：即使是很差的牌型也可以胡牌',
+            '可以吃、碰、杠，规则相对宽松'
+          ]
+        },
+        {
+          name: '特色玩法',
+          description: '云南麻将的特殊规则',
+          details: [
+            '自摸加倍：自摸胡牌获得双倍分数',
+            '杠上开花：杠牌后摸到胡牌加番',
+            '海底捞月：最后一张牌胡牌加番',
+            '天胡地胡：开局特殊胡牌高倍奖励'
           ]
         },
         {
           name: '计分方式',
-          description: '广东麻将的计分特点',
+          description: '云南麻将的计分特点',
           details: [
-            '按番数计分，1番起胡',
-            '自摸加1番',
-            '清一色、七对子等特殊牌型加番',
-            '庄家胡牌或自摸加番'
+            '底分制：设定基础分数，按倍数计算',
+            '包牌制：特定情况下包赔所有损失',
+            '连庄奖励：庄家连续胡牌有额外奖励',
+            '流局查叫：流局时检查听牌情况'
           ]
         }
       ]
@@ -76,29 +86,29 @@ const RegionalDifferences: React.FC = () => {
       ]
     },
     {
-      id: 'japanese',
-      name: '日本麻将',
-      description: '日式麻将，规则复杂精密，竞技性强',
-      color: 'from-blue-500 to-blue-600',
+      id: 'guangdong',
+      name: '广东麻将',
+      description: '流行于广东地区，以推倒胡为主要玩法',
+      color: 'from-red-500 to-red-600',
       rules: [
         {
-          name: '基本特色',
-          description: '日本麻将的核心规则',
+          name: '基本规则',
+          description: '广东麻将的基本特点',
           details: [
-            '144张牌，包含字牌和花牌',
-            '立直：宣告听牌，增加1番',
-            '振听：放弃胡牌权利的状态',
-            '役：必须有特定牌型才能胡牌'
+            '只有万、条、筒三种花色，没有字牌',
+            '总共108张牌（每种花色36张）',
+            '可以吃、碰、杠',
+            '推倒胡：任意牌型都可以胡牌'
           ]
         },
         {
-          name: '计分系统',
-          description: '复杂的点数计算',
+          name: '计分方式',
+          description: '广东麻将的计分特点',
           details: [
-            '点数制：8000点、12000点等',
-            '役满：最高等级的牌型',
-            '里宝牌：立直后的额外宝牌',
-            '流局满贯：特殊流局情况'
+            '按番数计分，1番起胡',
+            '自摸加1番',
+            '清一色、七对子等特殊牌型加番',
+            '庄家胡牌或自摸加番'
           ]
         }
       ]
@@ -107,7 +117,7 @@ const RegionalDifferences: React.FC = () => {
       id: 'taiwan',
       name: '台湾麻将',
       description: '台湾地区流行的十六张麻将',
-      color: 'from-green-500 to-green-600',
+      color: 'from-purple-500 to-purple-600',
       rules: [
         {
           name: '基本规则',
@@ -218,25 +228,25 @@ const RegionalDifferences: React.FC = () => {
             <thead>
               <tr className="border-b-2 border-gray-200">
                 <th className="text-left py-3 px-4 font-semibold text-gray-800">特征</th>
-                <th className="text-center py-3 px-4 font-semibold text-gray-800">广东麻将</th>
+                <th className="text-center py-3 px-4 font-semibold text-gray-800">云南麻将</th>
                 <th className="text-center py-3 px-4 font-semibold text-gray-800">四川麻将</th>
-                <th className="text-center py-3 px-4 font-semibold text-gray-800">日本麻将</th>
+                <th className="text-center py-3 px-4 font-semibold text-gray-800">广东麻将</th>
                 <th className="text-center py-3 px-4 font-semibold text-gray-800">台湾麻将</th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-b border-gray-100 hover:bg-gray-50">
                 <td className="py-3 px-4 font-medium">牌数</td>
+                <td className="py-3 px-4 text-center">136张</td>
                 <td className="py-3 px-4 text-center">108张</td>
                 <td className="py-3 px-4 text-center">108张</td>
-                <td className="py-3 px-4 text-center">144张</td>
                 <td className="py-3 px-4 text-center">144张</td>
               </tr>
               <tr className="border-b border-gray-100 hover:bg-gray-50">
                 <td className="py-3 px-4 font-medium">字牌</td>
-                <td className="py-3 px-4 text-center">无</td>
-                <td className="py-3 px-4 text-center">无/有</td>
                 <td className="py-3 px-4 text-center">有</td>
+                <td className="py-3 px-4 text-center">无/有</td>
+                <td className="py-3 px-4 text-center">无</td>
                 <td className="py-3 px-4 text-center">有</td>
               </tr>
               <tr className="border-b border-gray-100 hover:bg-gray-50">
@@ -248,9 +258,9 @@ const RegionalDifferences: React.FC = () => {
               </tr>
               <tr className="border-b border-gray-100 hover:bg-gray-50">
                 <td className="py-3 px-4 font-medium">特色规则</td>
-                <td className="py-3 px-4 text-center">推倒胡</td>
+                <td className="py-3 px-4 text-center">飘胡/烂牌胡</td>
                 <td className="py-3 px-4 text-center">血战到底</td>
-                <td className="py-3 px-4 text-center">立直/役</td>
+                <td className="py-3 px-4 text-center">推倒胡</td>
                 <td className="py-3 px-4 text-center">花牌/台数</td>
               </tr>
             </tbody>

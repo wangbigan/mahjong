@@ -19,29 +19,34 @@ const Terminology: React.FC = () => {
     { term: '打牌', category: '基础术语', definition: '将手中的牌丢弃到桌面中央' },
     { term: '吃牌', category: '基础术语', definition: '利用上家打出的牌组成顺子', example: '吃上家的五万，组成四五六万' },
     { term: '碰牌', category: '基础术语', definition: '利用任意一家打出的牌组成刻子', example: '碰三筒，亮出三张三筒' },
-    { term: '杠牌', category: '基础术语', definition: '四张相同的牌组成杠', example: '明杠、暗杠、补杠' },
+    { term: '杠牌', category: '基础术语', definition: '四张相同的牌组成杠，分为明杠（利用别人打出的牌组成杠）、暗杠（自己摸齐四张牌组成杠）、或补杠（先前碰牌后，再从手牌中摸到第四张牌组成杠）' },
     
     // 牌型术语
     { term: '顺子', category: '牌型术语', definition: '三张连续数字的同花色牌', example: '一二三万、四五六条' },
     { term: '刻子', category: '牌型术语', definition: '三张相同的牌', example: '三张五筒' },
-    { term: '将牌', category: '牌型术语', definition: '胡牌时必须的一对相同牌，也叫雀头' },
-    { term: '七对子', category: '牌型术语', definition: '七个不同的对子组成的特殊胡牌牌型' },
+    { term: '将牌', category: '牌型术语', definition: '胡牌时必须的一对相同牌，也叫“将对”或“雀头”' },
+    { term: '小七对', category: '牌型术语', definition: '七个对子组成的特殊胡牌牌型' },
+    { term: '幺九牌', category: '牌型术语', definition: '指一万、九万、一条、九条、一筒、九筒以及所有字牌（东南西北中发白）', example: '一万、九万、东风、中等都是幺九牌' },
     { term: '十三幺', category: '牌型术语', definition: '由13种幺九牌组成的特殊胡牌牌型' },
     { term: '清一色', category: '牌型术语', definition: '全部由同一种花色组成的牌型' },
+    { term: '缺一门', category: '牌型术语', definition: '手牌中缺少万、条、筒三种花色中的任意一种', example: '手中只有万和条，没有筒子' },
+    { term: '平胡', category: '牌型术语', definition: '最基本的胡牌牌型，由四个顺子（或刻子）加一对将牌组成', example: '一二三万、四五六条、七八九筒、二二二万、五五筒' },
+    { term: '鸡胡', category: '牌型术语', definition: '没有任何特殊牌型的普通胡牌，通常指最低番数的胡牌', example: '只有基本胡牌，无其他加番' },
     
     // 游戏术语
     { term: '庄家', category: '游戏术语', definition: '每局游戏的主导者，先出牌的人' },
     { term: '闲家', category: '游戏术语', definition: '除庄家外的其他三位玩家' },
-    { term: '听牌', category: '游戏术语', definition: '只差一张牌就能胡牌的状态' },
-    { term: '立直', category: '游戏术语', definition: '日本麻将中宣告听牌的操作' },
+    { term: '听牌', category: '游戏术语', definition: '只差一张牌就能胡牌的状态，有的地方也称“叫牌”' },
     { term: '流局', category: '游戏术语', definition: '牌墙摸完仍无人胡牌，本局结束' },
     { term: '连庄', category: '游戏术语', definition: '庄家胡牌或流局时继续做庄' },
+    { term: '起手牌', category: '游戏术语', definition: '游戏开始时每位玩家分到的初始手牌', example: '通常为13张牌' },
+    { term: '门清', category: '游戏术语', definition: '没有吃、碰、明杠的纯手牌状态', example: '保持门清可以增加某些牌型的番数' },
     
     // 计分术语
     { term: '番', category: '计分术语', definition: '麻将的计分单位，用于计算胡牌价值' },
     { term: '自摸', category: '计分术语', definition: '自己摸到胡牌的牌', example: '自摸加番' },
-    { term: '接炮', category: '计分术语', definition: '胡别人打出的牌，也叫点炮、放炮' },
-    { term: '满贯', category: '计分术语', definition: '日本麻将中的高分牌型等级' },
+    { term: '点炮', category: '计分术语', definition: '打出的牌让别人胡了，也叫放炮' },
+    { term: '接炮', category: '计分术语', definition: '胡别人打出的牌' },
     { term: '包牌', category: '计分术语', definition: '某玩家承担另一玩家的胡牌费用' },
   ];
 

@@ -16,76 +16,170 @@ const Tips: React.FC = () => {
   const [selectedDifficulty, setSelectedDifficulty] = useState('全部');
 
   const tips: Tip[] = [
+    // 前期技巧
     {
       id: '1',
-      title: '听牌基本口诀',
-      category: '基础技巧',
-      content: '两头听、卡张听、单钓听',
-      rhyme: '两头好，卡张难，单钓将，要耐心',
-      explanation: '两头听胜率最高，卡张听次之，单钓将需要耐心等待。优先选择两头听的牌型。',
+      title: '开局舍牌',
+      category: '前期技巧',
+      content: '字牌先出，幺九次之，中张保留',
+      rhyme: '先舍风箭后舍边，中张留到最关键',
+      explanation: '开局前几轮，优先舍弃字牌（东南西北中发白）和幺九边张（1、9等边路牌），这类牌组合成顺子的概率低，且易被对手碰杠。保留中张牌（如3-7的万、条、筒），因其更容易凑成顺子或搭子。',
       difficulty: 'beginner'
     },
     {
       id: '2',
-      title: '舍牌顺序',
-      category: '基础技巧',
-      content: '字牌先出，幺九次之',
-      rhyme: '风箭先走，幺九随后，中间留着，组顺有望',
-      explanation: '字牌最难组合，优先打出；一九牌组合面窄；中间牌容易组成顺子。',
+      title: '三巡观察',
+      category: '前期技巧',
+      content: '前三轮摸牌判断牌势',
+      rhyme: '三巡不摸风，杠上易开花',
+      explanation: '如果前三轮未摸到需要的字牌或边张，说明这类牌可能已被对手扣住或成对，此时需果断调整策略，转向中张牌型发展。同时，留意对手舍牌规律。',
       difficulty: 'beginner'
     },
     {
       id: '3',
-      title: '防守基本',
-      category: '防守技巧',
-      content: '观察舍牌，推测手牌',
-      rhyme: '他打一万我不碰，三四万里有文章',
-      explanation: '观察对手舍牌规律，推测其手牌构成，避免点炮。',
-      difficulty: 'intermediate'
-    },
-    {
-      id: '4',
-      title: '进攻时机',
-      category: '进攻技巧',
-      content: '听牌要快，胡牌要稳',
-      rhyme: '快听牌，稳胡牌，不贪大，求稳妥',
-      explanation: '尽快进入听牌状态，但胡牌时要确保安全，不要为了大牌型而冒险。',
-      difficulty: 'intermediate'
-    },
-    {
-      id: '5',
-      title: '牌型选择',
-      category: '基础技巧',
-      content: '平胡为主，特殊为辅',
-      rhyme: '平胡易成功，特殊要谨慎，七对要配对，清色需时间',
-      explanation: '基础胡牌容易达成，特殊牌型风险较大，要根据起手牌合理选择。',
+      title: '金三银七',
+      category: '前期技巧',
+      content: '保留3、7中张牌',
+      rhyme: '金三银七臭二八，宁缺东三省，不打边三饼',
+      explanation: '3、7是顺子核心（可连1-5或5-9），价值高于2、8等边张。',
       difficulty: 'beginner'
     },
     {
+      id: '4',
+      title: '搭子管理',
+      category: '前期技巧',
+      content: '按对子数量拆搭',
+      rhyme: '一对定将，两对拆搭，三对拆对，四对必碰',
+      explanation: '一对时保留作将牌；两对时拆多余搭子；三对拆一对；四对优先碰牌加速听牌。',
+      difficulty: 'beginner'
+    },
+    {
+      id: '5',
+      title: '听牌基本',
+      category: '前期技巧',
+      content: '优先两头听，避免单钓将',
+      rhyme: '两头好，卡张难，单钓将，要耐心',
+      explanation: '两头听（如听4万时，3万和5万均可胡）胜率最高（8张机会），单钓将仅剩4张牌需耐心。',
+      difficulty: 'beginner'
+    },
+    // 中期技巧
+    {
       id: '6',
-      title: '读牌技巧',
-      category: '高级技巧',
-      content: '数牌记忆，推理分析',
-      rhyme: '四张出三看一张，两张出一要小心',
-      explanation: '记住已出现的牌，推测剩余牌的分布，判断对手可能的牌型。',
-      difficulty: 'advanced'
+      title: '碰牌策略',
+      category: '中期技巧',
+      content: '权衡碰牌与摸牌的利弊',
+      rhyme: '上碰下自摸，牌从门前过',
+      explanation: '碰牌虽能加速手牌成型，但过度碰牌会暴露牌型，让对手提前防备。中盘阶段，若碰牌后难以快速听牌，反而会陷入被动。需权衡是"碰牌抢快"还是"摸牌求稳"。',
+      difficulty: 'intermediate'
     },
     {
       id: '7',
-      title: '做牌策略',
-      category: '高级技巧',
-      content: '根据起手牌确定方向',
-      rhyme: '对子多了做七对，一色多了清一色，平均分布走平胡',
-      explanation: '分析起手牌特点，选择最适合的牌型方向，提高成功率。',
-      difficulty: 'advanced'
+      title: '听牌选择',
+      category: '中期技巧',
+      content: '听熟张避生张',
+      rhyme: '听牌听熟张，生张是炸弹',
+      explanation: '听牌时优先选择"熟张"（牌池中已出现过的牌），尤其是中后期，生张极可能是对手扣住的危险牌。若被迫听生张，需观察对手是否已进入听牌状态。',
+      difficulty: 'intermediate'
     },
     {
       id: '8',
-      title: '心理战术',
+      title: '快听策略',
+      category: '中期技巧',
+      content: '快速听牌，减少贪大',
+      rhyme: '快听牌，稳胡牌，不贪大，求稳妥',
+      explanation: '早听牌多摸牌机会，但避免强求清一色等高危牌型。',
+      difficulty: 'intermediate'
+    },
+    {
+      id: '9',
+      title: '多面听牌',
+      category: '中期技巧',
+      content: '听牌选多面听＞单钓',
+      rhyme: '听牌多口胜单吊，三门不靠易放炮',
+      explanation: '三面听（如2-3-4-5万听1/4/7万）胡牌机会12张，效率远超单钓。',
+      difficulty: 'intermediate'
+    },
+    {
+      id: '10',
+      title: '读三家牌',
+      category: '中期技巧',
+      content: '观察对手舍牌推测手牌',
+      rhyme: '他打一万我不碰，三四万里有文章；两圈不见幺九张，对子刻子手中藏',
+      explanation: '下家舍1万时，警惕其握3/4万；两圈未出幺九牌，大概率被对手扣住成对/刻。',
+      difficulty: 'intermediate'
+    },
+    {
+      id: '11',
+      title: '牌旺策略',
+      category: '中期技巧',
+      content: '顺风局连庄，逆风弃庄',
+      rhyme: '牌旺坐庄要连庄，牌弱弃庄别硬撑',
+      explanation: '手气旺时争取连庄叠加番数；牌弱时及时止损。',
+      difficulty: 'intermediate'
+    },
+    // 后期技巧
+    {
+      id: '12',
+      title: '终局金三银七',
+      category: '后期技巧',
+      content: '终局阶段3、7的战略价值',
+      rhyme: '金三银七，生死一线间',
+      explanation: '数字3和7在麻将中被称为"金三银七"，因为它们能连接1-5和5-9的顺子，战略价值极高。终局阶段，若对手舍出3或7，往往意味着其手牌已成型，需警惕其是否听牌。',
+      difficulty: 'advanced'
+    },
+    {
+      id: '13',
+      title: '终局防守',
+      category: '后期技巧',
+      content: '优先舍幺九字牌，扣中张',
+      rhyme: '先跑一九，再跑字牌，最后跑中张',
+      explanation: '当牌局进入尾声，若判断自己难以胡牌，首要目标是"避炮"。按照"幺九→字牌→中张"的顺序舍牌，因幺九和字牌的成牌概率更低，相对安全。',
+      difficulty: 'intermediate'
+    },
+    {
+      id: '14',
+      title: '八断九不见',
+      category: '后期技巧',
+      content: '警惕断张牌风险',
+      rhyme: '八断九不见，必定有戏看；先打九后打八，紧防四七把把抓',
+      explanation: '八筒断张（四张现尽）而九筒未现时，对手可能握九筒对子或刻子，打4/7筒易点炮。',
+      difficulty: 'advanced'
+    },
+    {
+      id: '15',
+      title: '拆搭原则',
+      category: '后期技巧',
+      content: '拆低效搭子保进张',
+      rhyme: '拆边不拆卡，丢张最少化',
+      explanation: '优先拆边搭（1-2或8-9），保留卡张（如4-6听5）和中张搭（3-5）。',
+      difficulty: 'advanced'
+    },
+    {
+      id: '16',
+      title: '生死张陷阱',
+      category: '后期技巧',
+      content: '故意打半危险牌诱导对手',
+      rhyme: '生死张里藏陷阱，终局摸打反逻辑',
+      explanation: '终局阶段打出生张诱使对手跟打，破坏其听牌节奏。',
+      difficulty: 'advanced'
+    },
+    // 心理技巧
+    {
+      id: '17',
+      title: '牌烂心不烂',
       category: '心理技巧',
-      content: '保持冷静，控制情绪',
-      rhyme: '胜不骄来败不馁，平常心态最重要',
-      explanation: '保持良好心态，不被胜负影响判断，理性分析每一步。',
+      content: '烂牌防守，心态至上',
+      rhyme: '牌烂未必输，心乱一定输；输赢不显面，逆风稳如钟',
+      explanation: '烂牌时扣住危险张喂小牌家，避免点炮大牌；心态崩溃必输。',
+      difficulty: 'intermediate'
+    },
+    {
+      id: '18',
+      title: '逆风稳进',
+      category: '心理技巧',
+      content: '逆风局减少碰牌',
+      rhyme: '人旺不乱碰，宁弃不助攻',
+      explanation: '对手手气旺时，少碰牌避免助其摸牌提速。',
       difficulty: 'intermediate'
     }
   ];
